@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/javafx" fx:controller="com.example.eventmap.EventListController">
+    <!-- ヘッダー -->
+    <top>
+        <VBox spacing="10" alignment="CENTER" style="-fx-background-color: #f0f0f0; -fx-padding: 10;">
+            <Label text="イベント一覧" style="-fx-font-size: 20px;"/>
+            <HBox spacing="10" alignment="CENTER">
+                <TextField fx:id="searchField" promptText="イベント名や備考を検索" />
+                <Button fx:id="newEvent" text="新規イベント追加" onAction="#goToEventWindow"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- イベント一覧 -->
+    <center>
+        <TableView fx:id="eventTable" prefWidth="600" prefHeight="400">
+            <columns>
+                <TableColumn text="連番" fx:id="serialNumberColumn" />
+                <TableColumn text="イベント名" fx:id="eventNameColumn" />
+                <TableColumn text="商品の合計金額" fx:id="totalAmountColumn" />
+                <TableColumn text="備考" fx:id="comentColumn" />
+                <TableColumn text="操作" fx:id="actionColumn" />
+            </columns>
+        </TableView>
+    </center>
+
+    <!-- フッター -->
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10;">
+            <Label fx:id="totalEventsLabel" text="総イベント数: 0" />
+        </HBox>
+    </bottom>
+</BorderPane>

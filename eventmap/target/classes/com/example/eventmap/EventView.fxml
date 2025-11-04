@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.eventmap.EventViewController">
+    <!-- 上部メニューボタンエリア -->
+    <top>
+        <VBox alignment="CENTER" spacing="5.0">
+            <HBox alignment="CENTER_LEFT">
+                <Text fx:id="eventNameText" style="-fx-font-size: 20px;" />
+                <TextField fx:id="eventNameField" managed="false" promptText="イベント名" visible="false" HBox.hgrow="ALWAYS" />
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="5.0">
+                <Button fx:id="backButton" onAction="#goToEventList" prefWidth="90.0" text="イベントリスト" />
+                <Button fx:id="editButton" onAction="#toggleEditMode" prefWidth="90.0" text="編集" />
+                <Button fx:id="newCircle" disable="true" onAction="#addCircle" opacity="0.5" prefWidth="90.0" text="サークル追加" />
+                <Button fx:id="imageButton" disable="true" onAction="#addImage" opacity="0.5" prefWidth="90.0" text="画像追加" />
+                <Button fx:id="removeImageButton" disable="true" onAction="#deleteImage" opacity="0.5" prefWidth="90.0" text="画像削除" />
+                <Button fx:id="save" onAction="#saveGroup" prefWidth="90.0" text="マップを保存" />
+                <Button fx:id="dataButton" onAction="#saveEventToJson" mnemonicParsing="false" prefWidth="90.0" text="データ保存" />
+                <Region prefWidth="450.0" HBox.hgrow="ALWAYS" />
+                <Button fx:id="fullScreen" onAction="#circleHidden" prefWidth="90.0" text="サークル非表示" />
+            </HBox>
+        </VBox>
+    </top>
+    <left>
+        <Rectangle />
+    </left>
+    <!-- 下部スクロール可能なレイアウト -->
+    <center>
+        <ScrollPane fx:id="scrollPaneLeft" prefHeight="700.0" prefWidth="700.0"> <!--左レイアウト-->
+            <VBox fx:id="vboxMap" />
+        </ScrollPane>
+    </center>
+    <right>
+        <BorderPane fx:id="circleList" prefHeight="700.0" prefWidth="470.0">
+            <center>
+                <ScrollPane fx:id="scrollPaneRight"> <!--右レイアウト-->
+                    <VBox fx:id="circleBox" />
+                </ScrollPane>
+            </center>
+            <bottom>
+                <Label fx:id="totalResult" prefHeight="87.0" prefWidth="470.0" />
+            </bottom>
+        </BorderPane>
+    </right>
+<!--    <bottom>-->
+<!--        <TextArea prefHeight="60" promptText="備考" wrapText="true" />-->
+<!--    </bottom>-->
+</BorderPane>

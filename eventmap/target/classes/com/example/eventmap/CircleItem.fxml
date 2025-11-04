@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="circlePane" prefHeight="191.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.eventmap.CircleItemController">
+
+    <ColorPicker fx:id="pickColor" prefHeight="26.0" prefWidth="100.0" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" />
+    <TextField fx:id="colorHeight" prefHeight="10.0" prefWidth="37.0" promptText="縦" AnchorPane.topAnchor="40" AnchorPane.leftAnchor="10" />
+    <Text text="px" AnchorPane.topAnchor="45" AnchorPane.leftAnchor="50" />
+    <TextField fx:id="colorWidth" prefHeight="10.0" prefWidth="37.0" promptText="横" AnchorPane.topAnchor="40" AnchorPane.leftAnchor="75" />
+    <Text text="px" AnchorPane.topAnchor="45" AnchorPane.leftAnchor="115" />
+    <Button fx:id="colorButton" onAction="#selectColor" mnemonicParsing="false" prefHeight="26.0" prefWidth="67.0" text="図形生成" AnchorPane.topAnchor="75" AnchorPane.leftAnchor="10" />
+    <Button fx:id="shapeClear" prefHeight="26.0" prefWidth="67.0" text="図形クリア" AnchorPane.topAnchor="75" AnchorPane.leftAnchor="80" />
+
+    <TextArea fx:id="circleName" prefHeight="42.0" prefWidth="250.0" promptText="サークル名" wrapText="true" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="145" />
+    <CheckBox fx:id="circleCheck" mnemonicParsing="false" selected="true" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="415" />
+    <Button fx:id="circleDelete" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" text="削除" AnchorPane.topAnchor="70" AnchorPane.leftAnchor="365" />
+    <TextArea fx:id="circleComment" prefHeight="80.0" prefWidth="425.0" promptText="ここにコメントを入力してください。" wrapText="true" AnchorPane.topAnchor="115" AnchorPane.leftAnchor="10" />
+
+    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="440.0" spacing="10.0" AnchorPane.topAnchor="190" AnchorPane.leftAnchor="10">
+        <Button fx:id="productButton" mnemonicParsing="false" onAction="#addHBox" text="商品を追加" />
+        <Button fx:id="toggleButton" mnemonicParsing="false" onAction="#productHidden" text="詳細を隠す" visible="false" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Label fx:id="goodsResult" alignment="CENTER_RIGHT" maxWidth="Infinity" prefHeight="25.0" text="合計金額: 0円" />
+    </HBox>
+    <VBox fx:id="detailsBox" prefWidth="430.0" AnchorPane.topAnchor="230" AnchorPane.leftAnchor="10" />
+</AnchorPane>
